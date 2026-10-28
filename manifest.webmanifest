@@ -1,0 +1,22 @@
+{
+  "name": "Makale Atölyesi",
+  "short_name": "Makale",
+  "description": "Akademik yazım kurallarına göre makale yazma rehberi ve canlı denetleyici.",
+  "lang": "tr",
+  "start_url": "./index.html#yaz",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f4ef",
+  "theme_color": "#2f5bd3",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Makale Yaz", "url": "./index.html#yaz", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Rehber", "url": "./index.html#rehber", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

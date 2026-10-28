@@ -1,0 +1,11 @@
+# Kaynak olarak kullanılan, paylaşım hakkı belirsiz belge
+Akademik Yazım.pdf
+
+# İşletim sistemi ve editör dosyaları
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+
+# Ders notu (hocanın materyali)
+fis-ornegi.jpg

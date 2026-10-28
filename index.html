@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makale Atölyesi</title>
+<meta name="description" content="Açık erişimli akademik kaynaklara dayanan makale yazma rehberi ve canlı denetleyici.">
+<meta name="theme-color" content="#2f5bd3">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Makale">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="5" y="3" width="20" height="26" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 10h10M10 15h10M10 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="var(--accent)"/><path d="M21.8 24l1.5 1.5 2.9-3" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+    <span>Makale Atölyesi</span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <a href="#rehber" class="tab" data-view="rehber" role="tab">Rehber</a>
+    <a href="#fisler" class="tab" data-view="fisler" role="tab">Fişler</a>
+    <a href="#yaz" class="tab" data-view="yaz" role="tab">Makale Yaz</a>
+    <a href="#kaynaklar" class="tab" data-view="kaynaklar" role="tab">Kaynaklar</a>
+  </nav>
+  <button class="btn install" id="btn-install" hidden>⬇ Uygulamayı yükle</button>
+</header>
+<div class="install-tip" id="install-tip" hidden>
+  <span>Ana ekrana eklemek için Safari’de <b>Paylaş</b> <span aria-hidden="true">⎋</span> düğmesine, ardından <b>Ana Ekrana Ekle</b>’ye dokunun.</span>
+  <button class="btn ghost" id="tip-close" aria-label="Kapat">✕</button>
+</div>
+
+<!-- ======================= REHBER ======================= -->
+<main id="view-rehber" class="view guide">
+  <aside class="toc">
+    <div class="toc-title">İçindekiler</div>
+    <a href="#g-1">1. Bilimsel Düşünme ve Yayın</a>
+    <a href="#g-2">2. Akademik Dil ve Üslup</a>
+    <a href="#g-3">3. Bilimsel Metin Türleri</a>
+    <a href="#g-4">4. Konu ve Araştırma Sorusu</a>
+    <a href="#g-5">5. Literatür Taraması</a>
+    <a href="#g-6">6. Makalenin Yapısı</a>
+    <a href="#g-7">7. Yazım ve Noktalama</a>
+    <a href="#g-8">8. Özet ve Anahtar Kelimeler</a>
+    <a href="#g-9">✓ Son Okuma Listesi</a>
+    <a href="#kaynaklar">📚 Kaynaklar</a>
+    <a href="#yaz" class="toc-cta">Makale yazmaya başla →</a>
+  </aside>
+
+  <article class="guide-body">
+    <section class="hero">
+      <p class="eyebrow">Akademik Yazım Rehberi</p>
+      <h1>Kanıta dayalı, açık ve denetlenebilir bir makale yazmak</h1>
+      <p class="lead">Bu rehber, açık erişimli akademik kaynaklardaki ilkeleri görseller ve doğru–yanlış örneklerle özetler. Her bölümün başında dayandığı kaynaklar yer alır; tam künyeler <a href="#kaynaklar">Kaynaklar</a> sekmesindedir. <strong>Makale Yaz</strong> ekranındaki denetleyici metninizi bu ilkelere göre canlı olarak kontrol eder.</p>
+    </section>
+
+    <!-- 1 -->
+    <section id="g-1" class="chapter">
+      <h2><span class="num">1</span> Bilimsel Düşünme ve Yayın</h2>
+      <p class="basis">Dayanak: <a href="#k-fowler">Fowler vd. (2013)</a> · <a href="#k-spielman">Spielman vd. (2014)</a> · <a href="#k-fyfe">Fyfe vd. (2017)</a> · <a href="#k-tumin">Tumin ve Tobias (2019)</a> · <a href="#k-mallia">Mallia (2019)</a> · <a href="#k-yok">YÖK (2025)</a></p>
+      <p>Bilim insanları çalışmalarını, başkaları aynı deneyleri benzer ya da farklı koşullarda <strong>yeniden yapabilsin</strong> diye yayımlar. Bu yüzden bilimsel makale bir anlatıdan çok, okuyucunun her adımını denetleyebileceği bir kanıt kaydıdır.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 760 150" class="diagram" role="img" aria-label="Bilimsel yayıncılığın gelişimi">
+          <line x1="40" y1="60" x2="720" y2="60" class="d-line"/>
+          <g class="d-node"><circle cx="80" cy="60" r="11"/><text x="80" y="30" class="d-h">1665</text><text x="80" y="95">Philosophical Transactions:</text><text x="80" y="112">en eski bilimsel dergi</text></g>
+          <g class="d-node"><circle cx="290" cy="60" r="11"/><text x="290" y="30" class="d-h">1731</text><text x="290" y="95">Edinburgh’da hakemden geçmiş</text><text x="290" y="112">makaleler derlemesi</text></g>
+          <g class="d-node"><circle cx="500" cy="60" r="11"/><text x="500" y="30" class="d-h">1960’lar</text><text x="500" y="95">Hakem değerlendirmesi</text><text x="500" y="112">yaygın kabul görür</text></g>
+          <g class="d-node accent"><circle cx="690" cy="60" r="13"/><text x="690" y="30" class="d-h">Bugün</text><text x="690" y="95">Hakemli yayın: geçerliliğin</text><text x="690" y="112">standart ölçütü</text></g>
+        </svg>
+        <figcaption>Bilimsel dergilerin ve hakem değerlendirmesinin gelişimi (Fyfe vd., 2017; Tumin ve Tobias, 2019)</figcaption>
+      </figure>
+
+      <h3 id="g-ilkeler">Bilimsel düşünmenin ilkeleri</h3>
+      <div class="cards five">
+        <div class="card"><div class="ico">✓</div><b>Sınanabilirlik</b><span>Hipotez test edilebilir ve deney sonuçlarıyla çürütülebilir olmalıdır.</span></div>
+        <div class="card"><div class="ico">↻</div><b>Tekrarlanabilirlik</b><span>Çalışma, başkalarının tekrarlayabileceği ayrıntıda anlatılır.</span></div>
+        <div class="card"><div class="ico">◎</div><b>Nesnellik</b><span>Araştırmacı, gözlemlerini beklentisine göre çarpıtma riskine karşı önlem alır.</span></div>
+        <div class="card"><div class="ico">⇢</div><b>İlişki ≠ neden</b><span>İlişkisel veriler tek başına neden–sonuç iddiasını desteklemez.</span></div>
+        <div class="card"><div class="ico">?</div><b>Eleştirel denetim</b><span>Sonuçlar meslektaşların incelemesine (hakem değerlendirmesine) sunulur.</span></div>
+      </div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Aşırı iddia</span>Ekran süresi arttıkça notlar düştüğüne göre ekran süresi başarısızlığa neden olmaktadır.</div>
+        <div class="good"><span class="tag">Veriye uygun</span>Ekran süresi ile not ortalaması arasında negatif yönde bir ilişki bulunmuştur; ilişkisel desen neden–sonuç çıkarımına olanak vermemektedir.</div>
+      </div>
+
+      <h3 id="g-sorumluluk">Yazarın etik sorumlulukları</h3>
+      <div class="two-col">
+        <div>
+          <p>Yazar, araştırma dürüstlüğünü korumakla yükümlüdür. Yükseköğretim kurumlarının etik yönergesi; <b>intihal</b>, <b>verilerin uydurulması</b> ve <b>araştırma kayıtlarının ya da sonuçlarının çarpıtılması</b> gibi eylemleri bilimsel etiğe aykırı sayar.</p>
+        </div>
+        <div>
+          <ul class="ticks"><li>Başkasına ait her bilgi ve fikir için kaynak gösterin.</li><li>Verileri olduğu gibi raporlayın; işinize gelmeyen sonuçları gizlemeyin.</li><li>İnsanlarla yapılan çalışmalarda etik kurul onayı ve katılımcı onamı alın.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="g-2" class="chapter">
+      <h2><span class="num">2</span> Akademik Dil ve Üslup</h2>
+      <p class="basis">Dayanak: <a href="#k-wfs">Writing for Success</a> · <a href="#k-openstax-wg">Robinson vd. (2021)</a> · <a href="#k-guclu">Güçlü (2025)</a> · <a href="#k-aydin">Aydın (2022)</a> · <a href="#k-mensh">Mensh ve Kording (2017)</a> · <a href="#k-meo">Meo ve Eldawlatly (2019)</a></p>
+
+      <h3 id="g-uslup">Resmî ve nesnel üslup</h3>
+      <div class="pillars">
+        <div><b>Resmî</b><span>Gündelik konuşma diline ait sözcükler kullanılmaz.</span></div>
+        <div><b>Nesnel</b><span>Yazar kişisel değer yargılarını geri planda tutar.</span></div>
+        <div><b>Özgül</b><span>Fazla genel sözcükler yerine somut ifade seçilir.</span></div>
+        <div><b>Tutarlı</b><span>Aynı kavram metin boyunca aynı sözcükle anılır.</span></div>
+        <div><b>Odaklı</b><span>Her cümle ve paragraf tek bir ana fikre hizmet eder.</span></div>
+      </div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Gündelik dil</span>Öğrenciler yeni uygulamayı acayip sevdi.</div>
+        <div class="good"><span class="tag">Resmî ve ölçülebilir</span>Öğrencilerin %78’i yeni uygulamayı “yararlı” olarak değerlendirmiştir.</div>
+      </div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Değer yargısı</span>Bu yöntem gerçekten harika sonuçlar verdi!</div>
+        <div class="good"><span class="tag">Veriyle desteklenmiş</span>Bu yöntemle sınıflandırma doğruluğu %12 artmıştır.</div>
+      </div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Fazla genel</span>Uygulamadan sonra bazı şeyler değişti.</div>
+        <div class="good"><span class="tag">Özgül</span>Uygulamadan sonra öğretmenlerin ders planlama süresi kısalmıştır.</div>
+      </div>
+
+      <h3 id="g-oznel">Yazar sesi: ben, biz ve edilgen yapı</h3>
+      <p>İngilizce yazım kılavuzları akademik yazının çoğunda <b>üçüncü kişi</b> anlatımı önerir; çözümleyici metinlerde yazar kendini geri planda tutar. Türkçe makaleler üzerine yapılan bir çalışma da benzer bir tablo ortaya koyar: yazar çoğunlukla <b>öznesi belirtilmemiş edilgen yapılarla</b> ve “bu çalışma” gibi ifadelerle örtük biçimde yer alır. Açık gönderme yapıldığında da “biz” zamiri yerine çoğunlukla birinci çoğul kişi eki (-dık, -ımız) tercih edilir; zamir seyrektir.</p>
+      <p class="note">Birinci kişi kullanımı tartışmalı bir tercihtir: Nesnelliğin öne çıktığı alanlarda kaçınmak daha uygun olabilir; deneyime dayalı bazı alanlarda ise şeffaflık için kullanılabilir. Hedef derginin yayımladığı makalelere bakarak karar verin.</p>
+      <div class="compare">
+        <div class="bad"><span class="tag">Kişisel</span>Biz verileri inceledik ve bence sonuçlar çok önemli.</div>
+        <div class="good"><span class="tag">Örtük yazar</span>Veriler incelenmiş; bulgular, uygulamanın okuma süresini artırdığını göstermiştir.</div>
+      </div>
+
+      <h3 id="g-terim">Terim tutarlılığı</h3>
+      <p>Aynı kavram için farklı sözcükler kullanmak, okuyucuda ikinci sözcüğün başka bir anlam taşıyıp taşımadığı sorusunu doğurur. Bir terimi seçtikten sonra metin boyunca onu kullanın; aynı sözcüğü tekrar etmekte sakınca yoktur.</p>
+      <div class="compare">
+        <div class="bad"><span class="tag">Tutarsız</span>Çalışmaya 120 <u>katılımcı</u> dâhil edilmiştir. <u>Deneklerin</u> yaş ortalaması …</div>
+        <div class="good"><span class="tag">Tutarlı</span>Çalışmaya 120 <u>katılımcı</u> dâhil edilmiştir. <u>Katılımcıların</u> yaş ortalaması …</div>
+      </div>
+
+      <h3 id="g-cumle">Açık ve odaklı cümleler</h3>
+      <p>Makale tek bir ana mesaja odaklanmalıdır. Paragraflar da aynı düzeni izleyebilir: ilk cümle konuyu tanıtır, ortası yeni içeriği verir, son cümle akılda kalacak sonucu söyler. Birbiriyle ilgili cümleleri bir arada tutun; araya ilgisiz bilgi sokmayın. Uzun ve çok yüklü cümleleri bölün.</p>
+
+      <h3 id="g-dil-hatalar">Kaçınılacak dil kullanımları</h3>
+      <div class="error-grid">
+        <div><b>Gündelik dil</b><span>yani, işte, bayağı, mesela</span></div>
+        <div><b>Değer yargısı ve abartı</b><span>harika, muhteşem, kesinlikle, ünlem</span></div>
+        <div><b>Fazla genel sözcükler</b><span>bazı şeyler, vs., aşağı yukarı</span></div>
+        <div><b>Kaynaksız iddia</b><span>“Bilindiği gibi…”, “Araştırmalar göstermektedir…”</span></div>
+        <div><b>Aşırı uzun cümle</b><span>Tek cümlede birden çok ana fikir</span></div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section id="g-3" class="chapter">
+      <h2><span class="num">3</span> Bilimsel Metin Türleri</h2>
+      <p class="basis">Dayanak: <a href="#k-meo">Meo ve Eldawlatly (2019)</a> · <a href="#k-pautasso">Pautasso (2013)</a> · <a href="#k-snyder">Snyder (2019)</a> · <a href="#k-prisma">Page vd. (2021)</a> · <a href="#k-grech">Grech (2019)</a> · <a href="#k-tez">YÖK Ulusal Tez Merkezi</a></p>
+      <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>Tür</th><th>Amaç</th><th>Özellik</th></tr></thead>
+        <tbody>
+          <tr><td><b>Araştırma makalesi</b></td><td>Özgün bir çalışmanın sonuçlarını dergide yayımlamak</td><td>Başlık, özet, anahtar kelimeler, giriş, yöntem, bulgular, tartışma, sonuç ve kaynakça; hakem değerlendirmesinden geçer</td></tr>
+          <tr><td><b>Derleme</b></td><td>Bir konudaki yayınları özetlemek ve bütünleştirmek</td><td>Betimleyici derleme çalışmaları tek tek ele alır; bütünleştirici derleme ortak fikirleri arar</td></tr>
+          <tr><td><b>Sistematik derleme ve meta-analiz</b></td><td>Yayımlanmış kanıtla bir soruyu yanıtlamak</td><td>Yanlılığı azaltmak için önceden belirlenmiş protokol; nicel sonuçlar birleştirilirse meta-analiz. Raporlama için PRISMA 2020</td></tr>
+          <tr><td><b>Bildiri özeti, poster, sunum</b></td><td>Kongrede çalışmayı tanıtmak</td><td>Gazete yazısına benzer: ana mesaj başta, dikkat çekici ve kısa</td></tr>
+          <tr><td><b>Lisansüstü tez</b></td><td>Akademik derece için kapsamlı araştırma</td><td>Türkiye’de YÖK Ulusal Tez Merkezi’nde arşivlenir ve taranabilir</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="g-4" class="chapter">
+      <h2><span class="num">4</span> Konu ve Araştırma Sorusu</h2>
+      <p class="basis">Dayanak: <a href="#k-ratan">Ratan vd. (2019)</a> · <a href="#k-fowler">Fowler vd. (2013)</a></p>
+      <p>Araştırma sorusu, bir alandaki belirsizliği ortaya koyar, incelenecek problemi tanımlar ve yöntemi yönlendirir. Süreç bir ilgi alanıyla başlar; ön okuma yapılır, neyin hâlâ bilinmediği belirlenir, odak daraltılır, soru yazılır ve değerlendirilir. En başarılı konular <strong>dar odaklı ve dikkatle tanımlanmış</strong>, ama geniş ve önemli bir problemin parçası olan konulardır.</p>
+
+      <figure class="figure" id="g-sinir">
+        <svg viewBox="0 0 760 300" class="diagram" role="img" aria-label="Konuyu daraltma hunisi">
+          <polygon points="60,10 700,10 640,70 120,70" class="f1"/>
+          <polygon points="120,78 640,78 585,138 175,138" class="f2"/>
+          <polygon points="175,146 585,146 530,206 230,206" class="f3"/>
+          <polygon points="230,214 530,214 480,284 280,284" class="f4"/>
+          <text x="380" y="36" class="d-h">İlgi alanı</text><text x="380" y="56">Eğitim teknolojileri</text>
+          <text x="380" y="104" class="d-h">Konu (geniş)</text><text x="380" y="124">Ortaokulda dijital okuma</text>
+          <text x="380" y="172" class="d-h">Daraltılmış konu</text><text x="380" y="192">7. sınıf öğrencilerinde e-kitap okuma</text>
+          <text x="380" y="242" class="d-h light">Araştırma sorusu</text><text x="380" y="262" class="light">Tek, açık, yanıtlanabilir</text>
+        </svg>
+        <figcaption>Örnek soru: “7. sınıf öğrencilerinin haftalık e-kitap okuma süresi ile okuduğunu anlama puanı arasında anlamlı bir ilişki var mıdır?”</figcaption>
+      </figure>
+
+      <h3 id="g-problem">İyi bir araştırma sorusunun özellikleri (FINERMAPS)</h3>
+      <div class="chips finer"><span><b>F</b> uygulanabilir</span><span><b>I</b> ilgi çekici</span><span><b>N</b> özgün</span><span><b>E</b> etik</span><span><b>R</b> alanla ilgili</span><span><b>M</b> yönetilebilir</span><span><b>A</b> uygun</span><span><b>P</b> değer taşıyan</span><span><b>S</b> yayımlanabilir, sistematik</span></div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Fazla geniş</span>Sosyal medya gençleri nasıl etkiliyor?</div>
+        <div class="good"><span class="tag">Odaklı</span>Lise öğrencilerinin günlük sosyal medya kullanım süresi ile uyku kalitesi arasında anlamlı bir ilişki var mıdır?</div>
+      </div>
+      <div class="defs">
+        <div><b>Hipotez</b> Bir olay için önerilen ve test edilebilen açıklamadır. Geçerli olabilmesi için sınanabilir, aynı zamanda yanlışlanabilir, yani deney sonuçlarıyla çürütülebilir olmalıdır. Örnek: “Haftada üç saatten fazla e-kitap okuyan öğrencilerin okuduğunu anlama puanları daha yüksektir.”</div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="g-5" class="chapter">
+      <h2 id="g-literatur"><span class="num">5</span> Literatür Taraması</h2>
+      <p class="basis">Dayanak: <a href="#k-pautasso">Pautasso (2013)</a> · <a href="#k-snyder">Snyder (2019)</a> · <a href="#k-prisma">Page vd. (2021)</a> · <a href="#k-jawaid">Jawaid ve Jawaid (2019)</a></p>
+      <p>Yayın sayısı arttıkça kimse her yeni makaleyi ayrıntılı inceleyemez; bu yüzden güncel literatürün düzenli özetlerine ihtiyaç vardır. Literatür taraması; kaynak bulma ve değerlendirme, farklı kaynaklardan bilgiyi bütünleştirme, eleştirel düşünme, kendi sözcüklerinizle aktarma ve atıf becerilerini birlikte gerektirir.</p>
+      <figure class="figure">
+        <div class="flow">
+          <div><b>1</b>Soruyu ve kapsamı netleştir</div>
+          <div><b>2</b>Anahtar terimleri belirle</div>
+          <div><b>3</b>Veri tabanlarında tara, arama stratejisini kaydet</div>
+          <div><b>4</b>Seç ve oku</div>
+          <div><b>5</b>Eleştirel değerlendir</div>
+          <div class="hl"><b>6</b>Bütünleştir, boşluğu belirle</div>
+        </div>
+        <figcaption>Sistematik derlemelerde taranan tüm veri tabanları, kayıtlar ve web siteleri ile tam arama stratejisi raporlanır (PRISMA 2020).</figcaption>
+      </figure>
+      <div class="two-col">
+        <div>
+          <h3>Tarama türleri</h3>
+          <div class="defs">
+            <div><b>Anlatı derlemesi</b> Nitel bir özet ve yorum sunar.</div>
+            <div><b>Sistematik derleme</b> Yanlılığı azaltmak için önceden belirlenmiş bir protokolle toplanan kanıta dayanır.</div>
+            <div><b>Meta-analiz</b> Sistematik derlemedeki nicel sonuçları istatistiksel olarak birleştirir.</div>
+          </div>
+        </div>
+        <div>
+          <h3>Girişte literatür</h3>
+          <ul class="ticks"><li>Konuyla ilgili önemli çalışmaları okuyun.</li><li>Çoğunlukla son beş yıla ait güncel çalışmalardan seçin.</li><li>Literatürde neyin eksik olduğunu gösterin.</li></ul>
+          <div class="chips"><span>Google Scholar</span><span>Web of Science</span><span>Scopus</span><span>DergiPark</span><span>TR Dizin</span><span>YÖK Ulusal Tez Merkezi</span></div>
+        </div>
+      </div>
+      <div class="compare">
+        <div class="bad"><span class="tag">Sıralama</span>Yılmaz (2019) yazma kaygısını incelemiştir. Kaya (2021) öz yeterliği incelemiştir.</div>
+        <div class="good"><span class="tag">Bütünleştirme</span>Kaygı ve öz yeterlik ayrı ayrı incelenmiş (Yılmaz, 2019; Kaya, 2021); iki değişkenin üniversite düzeyindeki ilişkisi ise sınırlı sayıda çalışmada ele alınmıştır.</div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="g-6" class="chapter">
+      <h2 id="g-imrad"><span class="num">6</span> Makalenin Yapısı (IMRAD)</h2>
+      <p class="basis">Dayanak: <a href="#k-jawaid">Jawaid ve Jawaid (2019)</a> · <a href="#k-mensh">Mensh ve Kording (2017)</a> · <a href="#k-meo">Meo ve Eldawlatly (2019)</a> · <a href="#k-tullu">Tullu (2019)</a> · <a href="#k-eldawlatly">Eldawlatly ve Meo (2019)</a> · <a href="#k-riad">Riad (2019)</a> · <a href="#k-openstax-wg">Robinson vd. (2021)</a></p>
+      <p>Özgün araştırma makaleleri <strong>IMRAD</strong> düzenini izler: Introduction (Giriş), Methods (Yöntem), Results (Bulgular) and Discussion (Tartışma). Makale ölçeğinde giriş <b>bağlamı</b> kurar, bulgular <b>içeriği</b> sunar, tartışma <b>sonucu</b> verir.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 760 400" class="diagram" role="img" aria-label="IMRAD kum saati modeli">
+          <polygon points="150,10 610,10 470,130 290,130" class="h1"/>
+          <rect x="290" y="138" width="180" height="56" class="h2"/>
+          <rect x="290" y="202" width="180" height="56" class="h3"/>
+          <polygon points="290,266 470,266 610,390 150,390" class="h4"/>
+          <text x="380" y="38" class="d-h">Başlık · Özet</text>
+          <text x="380" y="76" class="d-h">GİRİŞ</text><text x="380" y="98">Geniş alan → bilinenler → boşluk → amaç</text>
+          <text x="380" y="164" class="d-h">YÖNTEM</text><text x="380" y="183">Nasıl yapıldı?</text>
+          <text x="380" y="228" class="d-h">BULGULAR</text><text x="380" y="247">Ne bulundu?</text>
+          <text x="380" y="310" class="d-h">TARTIŞMA</text><text x="380" y="332">Boşluk nasıl doldu? Alana katkı ne?</text>
+          <text x="380" y="368" class="d-h">SONUÇ · KAYNAKÇA</text>
+          <text x="660" y="70" class="side">genelden</text><text x="660" y="88" class="side">özele</text>
+          <text x="660" y="320" class="side">özelden</text><text x="660" y="338" class="side">genele</text>
+        </svg>
+        <figcaption>Giriş geniş alandan başlayıp açık soruya iner; tartışma bulguların alanı nasıl ilerlettiğini gösterir.</figcaption>
+      </figure>
+
+      <div class="parts">
+        <div class="part" id="g-baslik">
+          <h3>Başlık</h3>
+          <p>Editörün, hakemin ve okuyucunun ilk okuduğu kısımdır. Betimleyici, doğru, kısa ve kesin olmalı; yanıltmamalıdır. Önemli terimleri başa yakın koyun. Yaygın olmayan kısaltmalardan kaçının.</p>
+          <div class="compare small"><div class="bad">Eğitim Hakkında Bir Araştırma</div><div class="good">Ortaokul Öğrencilerinde Okuma Motivasyonu ile Akademik Başarı İlişkisi</div></div>
+        </div>
+        <div class="part" id="g-ozet-bolum">
+          <h3>Özet</h3>
+          <p>Ana metni okumadan anlaşılabilen, ana metinle tutarlı bir özet: amaç, yöntem, bulgular ve sonuç. <a href="#g-8">Ayrıntılar →</a></p>
+        </div>
+        <div class="part" id="g-giris">
+          <h3>Giriş</h3>
+          <p>Kısa ve iyi kaynaklandırılmış olmalıdır. Konunun ve sorunun boyutunu, bilinenleri ve literatürdeki boşluğu gösterir; sonunda çalışmanın amacını yineler. Okuyucuya şunları söyler:</p>
+          <ol class="qs"><li>Bu konuda ne biliniyor?</li><li>Çalışma neden yapıldı?</li><li>Literatüre hangi yeni bilgiyi ekleyecek?</li></ol>
+        </div>
+        <div class="part" id="g-yontem">
+          <h3>Yöntem</h3>
+          <p>Beş temel öğe: <b>araştırma deseni, ortam ve katılımcılar, veri toplama, veri analizi, etik onay</b>. Yapılmış işi anlattığı için geçmiş zamanla yazılır. İstatistiksel yöntemleri ve kullanılan yazılımı ayrıntılı belirtin.</p>
+        </div>
+        <div class="part" id="g-bulgular">
+          <h3>Bulgular</h3>
+          <p>Sıra genellikle şöyledir: önce örneklemin özellikleri, sonra ana bulgular, ardından ikincil bulgular. Ayrıntılı veriler tablo ve şekillerde verilir. Bulguları bu bölümde <b>tartışmak</b>, makalenin reddine yol açabilen yaygın bir hatadır.</p>
+          <div class="compare small"><div class="bad">Kaygı puanları düştü; bu da eğitimin işe yaradığını düşündürmektedir.</div><div class="good">Son test kaygı puanı ortalaması 3,42’den 2,87’ye düşmüştür (t = 4,11; p &lt; 0,001; Tablo 2).</div></div>
+        </div>
+        <div class="part" id="g-tartisma">
+          <h3>Tartışma</h3>
+          <p>Önemli bulguların kısa bir özetiyle başlar. Ardından bulgular önceki çalışmalarla karşılaştırılır; kaynakların çoğu bu bölümdedir. Yorumun sınırlılıkları belirtilir ve çalışmanın alana katkısı gösterilir. Girişte söylenenler tekrarlanmaz.</p>
+        </div>
+        <div class="part" id="g-sonuc">
+          <h3>Sonuç</h3>
+          <p>Ana bulguları kapsar ve okuyucunun aklında kalacak mesajı verir. Kanıtlanmamış bulguları öne çıkarmak ve belirsiz, yanlı ifadeler kullanmak sonuç bölümünün sık görülen kusurlarıdır.</p>
+        </div>
+        <div class="part" id="g-kaynakca">
+          <h3>Kaynakça</h3>
+          <p>APA’da metinde atıf yapılan her kaynak kaynakçada, kaynakçadaki her kaynak da metinde yer alır. Kaynakça yazar soyadına göre alfabetik sıralanır.</p>
+          <div class="code">Metinde: … sınırlı kalmıştır (Yılmaz, 2019).<br>Kaynakçada: Yılmaz, A. (2019). Eser adı. <i>Dergi Adı, 12</i>(3), 45–60.</div>
+        </div>
+      </div>
+      <p class="note warn" id="g-yapi-hatalar"><b>Sık görülen kusurlar:</b> önceki çalışmalardan kaynak göstermeden söz etmek · çelişkili bulguları ve alternatif açıklamaları tartışmamak · güçlü ve sınırlı yönleri belirtmemek · bulgular bölümünde yorum yapmak.</p>
+    </section>
+
+    <!-- 7 -->
+    <section id="g-7" class="chapter">
+      <h2><span class="num">7</span> Yazım ve Noktalama</h2>
+      <p class="basis">Dayanak: <a href="#k-tdk">TDK Yazım Kuralları</a> · <a href="#k-openstax-wg">Robinson vd. (2021)</a> · <a href="#k-eldawlatly">Eldawlatly ve Meo (2019)</a></p>
+
+      <h3 id="g-zaman">Zaman kullanımı</h3>
+      <div class="tense">
+        <div><b>Tutarlılık</b><span>Hangi zamanı seçerseniz metin boyunca koruyun; zaman değiştirmek yalnızca gerçek bir zaman farkını göstermelidir.</span></div>
+        <div><b>Yöntem</b><span>Yapılmış işi anlattığı için geçmiş zaman.</span><i>Veriler çevrim içi form ile toplanmıştır.</i></div>
+        <div><b>Kaçının</b><span>Aynı paragrafta nedensiz zaman değişikliği.</span><i>Veriler toplandı. Analizde t-testi kullanılıyor.</i></div>
+      </div>
+
+      <div class="two-col">
+        <div id="g-buyuk">
+          <h3>Büyük harf</h3>
+          <p>Büyük harf cümle başında, özel adlarda ve kurum adlarında kullanılır. Genel kavram adları cümle içinde küçük harfle yazılır.</p>
+          <div class="compare stack"><div class="bad"><span class="tag">Gereksiz</span>Bu çalışmada Nitel Araştırma yöntemi kullanılmıştır.</div><div class="good"><span class="tag">Doğru</span>Bu çalışmada nitel araştırma yöntemi kullanılmıştır. Veriler Ankara Üniversitesinde toplanmıştır.</div></div>
+        </div>
+        <div id="g-birlik">
+          <h3>Kısaltmalar ve yabancı sözcükler</h3>
+          <ul class="ticks"><li>Kısaltmayı ilk kullanımda açık adıyla verin, sonra kısaltmayı kullanın: <i>Türkiye İstatistik Kurumu (TÜİK)</i>.</li><li>Kurum kısaltmaları her kelimenin ilk harfi büyük yazılarak yapılır: <i>TBMM, TDK</i>.</li><li>Yerleşik Türkçe karşılığı olan yabancı sözcüklerde karşılığı TDK sözlüğünden kontrol edin: <i>data → veri, kriter → ölçüt</i>.</li></ul>
+        </div>
+      </div>
+
+      <h3 id="g-noktalama">Noktalama</h3>
+      <p>Virgül, noktalı virgül, iki nokta ve diğer işaretlerin kullanımı için TDK’nin <a href="https://tdk.gov.tr/icerik/yazim-kurallari/noktalama-isaretleri-aciklamalar/" target="_blank" rel="noopener">noktalama işaretleri açıklamalarına</a> başvurun. Ünlem işareti duygu bildirdiği için akademik metinde kullanılmaz.</p>
+
+      <h3 id="g-imla-hatalar">Sık yapılan yazım hataları</h3>
+      <div class="table-wrap">
+      <table class="tbl compact">
+        <thead><tr><th>Yanlış</th><th>Doğru</th><th>TDK kuralı</th></tr></thead>
+        <tbody>
+          <tr><td class="x">anlaşılıyorki</td><td class="v">anlaşılıyor ki</td><td>Bağlaç olan “ki” ayrı yazılır.</td></tr>
+          <tr><td class="x">yeterlimi?</td><td class="v">yeterli mi?</td><td>Soru eki “mı, mi, mu, mü” ayrı yazılır.</td></tr>
+          <tr><td class="x">sonuçlarda değişti</td><td class="v">sonuçlar da değişti</td><td>Bağlaç olan “da, de” ayrı yazılır.</td></tr>
+          <tr><td class="x">herşey, birşey</td><td class="v">her şey, bir şey</td><td>Ayrı yazılan birleşik kelimeler</td></tr>
+          <tr><td class="x">bir çok, hiç bir</td><td class="v">birçok, hiçbir</td><td>Bitişik yazılan birleşik kelimeler</td></tr>
+          <tr><td class="x">yada</td><td class="v">ya da</td><td>Bağlaçlar ayrı yazılır.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section id="g-8" class="chapter">
+      <h2 id="g-ozet"><span class="num">8</span> Özet ve Anahtar Kelimeler</h2>
+      <p class="basis">Dayanak: <a href="#k-andrade">Andrade (2011)</a> · <a href="#k-tullu">Tullu (2019)</a> · <a href="#k-mcmurrey">McMurrey (t.y.)</a> · <a href="#k-meo">Meo ve Eldawlatly (2019)</a></p>
+      <p>Okuyucuların çoğu yalnızca başlığı ve özeti okur. Özet; kongre kitaplarında yayımlanan, hakemin değerlendirme daveti alırken gördüğü ve veri tabanlarında görünen tek kısımdır. Bu yüzden basit, açık, yansız, kısa ve <strong>ana metinden bağımsız</strong> anlaşılabilir olmalıdır.</p>
+      <div class="rules-row">
+        <div><b>200–250</b><span>kelime: dergilerin genel sınırı (Andrade)</span></div>
+        <div><b>200–300</b><span>kelime: çoğu derginin izni (Tullu)</span></div>
+        <div><b>0</b><span>kaynak atfı</span></div>
+        <div><b>Dergi</b><span>talimatı her zaman önce gelir</span></div>
+      </div>
+
+      <h3 id="g-ozet-yapi">Özetin unsurları</h3>
+      <figure class="figure">
+        <div class="steps4">
+          <div class="s-amac"><b>1 · Amaç</b><span>Çalışma neyi araştırdı?</span></div>
+          <div class="s-yontem"><b>2 · Yöntem</b><span>Nasıl yapıldı?</span></div>
+          <div class="s-bulgu"><b>3 · Bulgular</b><span>En önemli sonuçlar neler?</span></div>
+          <div class="s-sonuc"><b>4 · Sonuç</b><span>Bulgular ne anlama geliyor?</span></div>
+        </div>
+        <div class="annotated">
+          <span class="s-amac">Bu çalışmanın amacı, üniversite öğrencilerinin akademik yazma kaygısı ile yazma öz yeterliği arasındaki ilişkiyi incelemektir.</span>
+          <span class="s-yontem">Araştırma ilişkisel tarama deseniyle yürütülmüş; veriler 312 lisans öğrencisinden iki ölçekle toplanmış ve korelasyon ile regresyon analizleriyle çözümlenmiştir.</span>
+          <span class="s-bulgu">Bulgular, iki değişken arasında negatif yönde ve orta düzeyde anlamlı bir ilişki olduğunu göstermiştir.</span>
+          <span class="s-sonuc">Sonuç olarak yazma öz yeterliğinin akademik yazma kaygısının önemli bir yordayıcısı olduğu söylenebilir.</span>
+        </div>
+        <figcaption>Renkli örnek: her cümle bir unsura karşılık gelir. Çoğu dergi bu unsurları alt başlıklarla ayıran yapılandırılmış özet ister.</figcaption>
+      </figure>
+
+      <div class="two-col">
+        <div>
+          <h3>Özet türleri</h3>
+          <div class="defs">
+            <div><b>Bilgilendirici özet</b> Ana bölümlerdeki temel bulguları ve sonuçları yoğunlaştırarak verir. Araştırma makalelerinde kullanılır.</div>
+            <div><b>Betimleyici özet</b> Yalnızca konuyu ve amacı tanıtır; bulgu ve sonuç içermez.</div>
+          </div>
+        </div>
+        <div>
+          <h3>Özette olmaması gerekenler</h3>
+          <ul class="ticks"><li>Kaynağa atıf</li><li>Ana metinde bulunmayan bilgi</li><li>Ana metinde de yapılmaması gereken hatalar (örneğin ilişkiyi nedensellik gibi sunmak)</li><li>Gereksiz ayrıntı ya da ana bulguyu atlayan eksik bilgi</li></ul>
+        </div>
+      </div>
+
+      <h3 id="g-abstract">Abstract</h3>
+      <p>Abstract da özet gibi ana metinle tutarlı ve kendi başına anlaşılabilir olmalıdır; Türkçe özetteki amaç, yöntem, bulgu ve sonucu eksiksiz içermelidir. Hedef derginin yayımladığı abstract’ları inceleyerek ifade ve biçim alışkanlıklarını öğrenin.</p>
+
+      <h3 id="g-anahtar">Anahtar kelimeler</h3>
+      <p>Dergi siteleri, veri tabanları ve arama motorları makaleyi başlık ve özetteki terimlerle bulur. En önemli terimleri hem başlıkta hem özette kullanın ve anahtar kelimeleri özetten sonra listeleyin. <b>Sayı dergiden dergiye değişir</b>; hedef derginin talimatına uyun.</p>
+      <div class="compare">
+        <div class="bad"><span class="tag">Uyumsuz</span>Başlık: “…Yazma Kaygısı…” → Anahtar: eğitim, öğrenci</div>
+        <div class="good"><span class="tag">Uyumlu</span>Başlık: “…Yazma Kaygısı…” → Anahtar: akademik yazma, yazma kaygısı, öz yeterlik</div>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section id="g-9" class="chapter">
+      <h2><span class="num">✓</span> Son Okuma Listesi</h2>
+      <p>Göndermeden önce işaretleyin. İşaretleriniz bu tarayıcıda saklanır.</p>
+      <div class="final-list" id="final-list"></div>
+      <a href="#yaz" class="btn primary big">Makale yazma ekranına geç →</a>
+    </section>
+  </article>
+</main>
+
+<!-- ======================= KAYNAKLAR ======================= -->
+<main id="view-kaynaklar" class="view sources" hidden>
+  <article class="sources-body">
+    <section class="hero">
+      <p class="eyebrow">Kaynaklar</p>
+      <h1>Kuralların dayanağı ve açık erişimli kaynaklar</h1>
+      <p class="lead">Bu sayfa, rehberdeki bilgilerin ve denetleyicinin kurallarının hangi kaynaklara dayandığını gösterir. Akademik kaynakların tamamı ücretsiz okunabilir ve açık lisanslıdır; Türkçe yazım kuralları için resmî kaynaklara başvurulmuştur.</p>
+    </section>
+
+    <section class="chapter" id="k-ozet">
+      <h2><span class="num">i</span> Uygulamadaki kurallar nereden geliyor?</h2>
+      <div class="origin">
+        <div class="origin-step">
+          <b>1 · Akademik yazım kaynakları</b>
+          <p>Makale yapısı, bölümlerin içeriği, özet, literatür taraması ve araştırma sorusuyla ilgili kurallar hakemli dergi makalelerine ve açık ders kitaplarına dayanır. Rehberdeki her bölümün başındaki <span class="basis-inline">Dayanak</span> satırı ilgili kaynaklara bağlanır.</p>
+        </div>
+        <div class="origin-step">
+          <b>2 · Türkçe akademik üslup</b>
+          <p>Yazar sesi, “ben/biz” kullanımı ve edilgen yapı konusundaki öneriler, Türkçe makaleler üzerine yapılmış açık erişimli çalışmalara dayanır (<a href="#k-guclu">Güçlü, 2025</a>; <a href="#k-aydin">Aydın, 2022</a>).</p>
+        </div>
+        <div class="origin-step">
+          <b>3 · Türkçe yazım</b>
+          <p>“ki”, “da/de”, “mi” yazımı, büyük harf, kısaltma, noktalama ve birleşik kelime kuralları Türk Dil Kurumunun resmî <a href="#k-tdk">Yazım Kuralları</a> sayfalarına dayanır.</p>
+        </div>
+      </div>
+
+      <h3>Sayısal ölçütler: hangisi nereden?</h3>
+      <div class="table-wrap">
+      <table class="tbl compact">
+        <thead><tr><th>Ölçüt</th><th>Kaynakta</th><th>Uygulamada</th></tr></thead>
+        <tbody>
+          <tr><td>Özet uzunluğu</td><td>Genellikle 200–250 kelime (<a href="#k-andrade">Andrade</a>); çoğu dergi 200–300 (<a href="#k-tullu">Tullu</a>); dergi talimatına uyulmalı</td><td><span class="src-tag app">Varsayılan 150–300, ayarlanabilir</span></td></tr>
+          <tr><td>Anahtar kelime sayısı</td><td>Hedef derginin talimatına uyulmalı (<a href="#k-tullu">Tullu</a>)</td><td><span class="src-tag app">Varsayılan 3–6, ayarlanabilir</span></td></tr>
+          <tr><td>Özette kaynak atfı yok; özet ana metinle tutarlı</td><td><a href="#k-andrade">Andrade</a>; <a href="#k-tullu">Tullu</a></td><td><span class="src-tag ok">Kaynaktaki gibi</span></td></tr>
+          <tr><td>Bulgularda yorum yok</td><td><a href="#k-riad">Riad</a></td><td><span class="src-tag ok">Kaynaktaki gibi</span></td></tr>
+          <tr><td>Başlık uzunluğu</td><td>Çok uzun ya da çok kısa olmamalı (<a href="#k-meo">Meo</a>; <a href="#k-tullu">Tullu</a>)</td><td><span class="src-tag app">4–20 kelime (uygulama tercihi)</span></td></tr>
+          <tr><td>Cümle uzunluğu</td><td>Tek ana mesaj, açık cümle (<a href="#k-mensh">Mensh</a>)</td><td><span class="src-tag app">40 kelimeden uzunsa uyarı (uygulama tercihi)</span></td></tr>
+          <tr><td>Giriş / yöntem / tartışma uzunluğu</td><td>Sınır verilmez; içerik öğeleri tanımlanır</td><td><span class="src-tag app">150 / 100 / 120 kelime altı bilgi notu (uygulama tercihi)</span></td></tr>
+          <tr><td>Edilgen yapı yoğunluğu</td><td>Türkçede yaygın (<a href="#k-guclu">Güçlü</a>); İngilizcede edilgenden kaçınma önerisi (<a href="#k-tullu">Tullu</a>)</td><td><span class="src-tag app">%85 ve üstünde bilgi notu (uygulama tercihi)</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="note">Kaynaklar çoğu konuda ilke verir, sayısal sınır vermez. <b>Uygulama tercihi</b> olarak işaretlenen eşikler, bu ilkeleri ölçülebilir hâle getirmek için seçilmiştir; kesin kural değil, yol gösterici sınırlardır. Özet ve anahtar kelime sınırlarını Makale Yaz ekranındaki <b>Dergi sınırları</b> ayarından değiştirebilirsiniz.</p>
+
+      <h3>Kaynaklar farklı şeyler söylediğinde</h3>
+      <ul class="ticks">
+        <li><b>Birinci kişi:</b> İngilizce yazım kılavuzlarının bir kısmı “I/we” kullanımını kabul eder. Türkçe makalelerde ise yazar çoğunlukla örtük kalır (<a href="#k-guclu">Güçlü, 2025</a>). Bu yüzden uygulama, Türkçe bölümlerde “ben/biz” için uyarı verir; abstract’ta birinci kişiyi denetlemez.</li>
+        <li><b>Edilgen yapı:</b> İngilizce özet için edilgenden kaçınma önerilir (<a href="#k-tullu">Tullu, 2019</a>). Türkçe makalelerde ise öznesi belirtilmemiş edilgen yapı yaygın ve olağandır. Uygulama yalnızca çok yoğun kullanımda bilgi notu verir.</li>
+        <li><b>Özet biçimi:</b> Çoğu dergi alt başlıklı (yapılandırılmış) özet ister (<a href="#k-andrade">Andrade, 2011</a>). Uygulama tek paragraf zorunluluğu koymaz.</li>
+      </ul>
+
+      <h3>Denetleyici nasıl çalışır, sınırları nelerdir?</h3>
+      <ul class="ticks">
+        <li>Metni kelime ve kalıp eşleştirmesiyle tarar (örn. “bence”, “yaptık”, “(Yazar, 2020)” biçimi). Metnin anlamını yorumlamaz.</li>
+        <li>Bu yüzden bazı uyarılar yanlış alarm olabilir ya da bazı hatalar gözden kaçabilir. “Öneri” düzeyindeki bulgular kontrol etmeniz içindir.</li>
+        <li>Atıf denetimi yazar–tarih biçimindeki atıfları (APA benzeri) tanır. Atıf stilinizi hedef derginin yazım kurallarına göre ayarlayın.</li>
+      </ul>
+
+      <h3>“Telifsiz” ne demek?</h3>
+      <div class="lic-legend">
+        <div><span class="lic cc">CC BY</span> Kaynak gösterildiği sürece kopyalanabilir, uyarlanabilir, ticari amaçla bile kullanılabilir.</div>
+        <div><span class="lic cc">CC BY-NC / NC-SA</span> Kaynak gösterilerek ticari olmayan amaçla kullanılabilir; SA’da uyarlamalar aynı lisansla paylaşılır.</div>
+        <div><span class="lic cc">CC BY-NC-ND</span> Kaynak gösterilerek ticari olmayan amaçla, değiştirilmeden paylaşılabilir.</div>
+        <div><span class="lic off">Resmî kaynak</span> Kamu kurumunun ücretsiz erişime açtığı resmî metin veya sayfa. Creative Commons lisansı taşımaz; atıf yapılarak başvurulur.</div>
+      </div>
+      <p class="note warn">Creative Commons lisanslı eserler tam anlamıyla “telifsiz” değildir: telif hakkı yazarda kalır, ancak lisans kaynak gösterilerek kullanıma izin verir. Bu uygulama kaynaklardan metin kopyalamaz; ilkeleri kendi ifadesiyle aktarır ve her ilkenin kaynağını gösterir. Lisanslar Europe PMC, Zenodo, Crossref ve yayıncı sayfalarından kontrol edilmiştir (Ekim 2026).</p>
+    </section>
+
+    <section class="chapter">
+      <h2><span class="num">⇄</span> Rehber bölümleri ve dayanakları</h2>
+      <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>Rehber bölümü</th><th>Desteklenen bilgiler</th><th>Kaynaklar</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#g-1">1. Bilimsel düşünme ve yayın</a></td><td>Sınanabilir hipotez, tekrarlanabilirlik, nesnellik, ilişki–neden ayrımı; ilk bilimsel dergi ve hakemliğin gelişimi; araştırma ve yayın etiği</td><td><a href="#k-fowler">Fowler vd., 2013</a>; <a href="#k-spielman">Spielman vd., 2014</a>; <a href="#k-fyfe">Fyfe vd., 2017</a>; <a href="#k-tumin">Tumin ve Tobias, 2019</a>; <a href="#k-mallia">Mallia, 2019</a>; <a href="#k-yok">YÖK, 2025</a></td></tr>
+          <tr><td><a href="#g-2">2. Akademik dil ve üslup</a></td><td>Resmî dil, değer yargısından kaçınma, özgül sözcük; yazar sesi ve edilgen yapı; terim tutarlılığı; tek ana mesaj</td><td><a href="#k-wfs">Writing for Success</a>; <a href="#k-openstax-wg">Robinson vd., 2021</a>; <a href="#k-guclu">Güçlü, 2025</a>; <a href="#k-aydin">Aydın, 2022</a>; <a href="#k-mensh">Mensh ve Kording, 2017</a>; <a href="#k-meo">Meo ve Eldawlatly, 2019</a></td></tr>
+          <tr><td><a href="#g-3">3. Bilimsel metin türleri</a></td><td>Araştırma makalesinin bölümleri; derleme türleri; sistematik derleme ve raporlama; bildiri ve poster; tez arşivi</td><td><a href="#k-meo">Meo ve Eldawlatly, 2019</a>; <a href="#k-pautasso">Pautasso, 2013</a>; <a href="#k-snyder">Snyder, 2019</a>; <a href="#k-prisma">Page vd., 2021</a>; <a href="#k-grech">Grech, 2019</a>; <a href="#k-tez">YÖK Ulusal Tez Merkezi</a></td></tr>
+          <tr><td><a href="#g-4">4. Konu ve araştırma sorusu</a></td><td>Soru oluşturma süreci, FINERMAPS ölçütleri, dar odak; hipotezin sınanabilirliği</td><td><a href="#k-ratan">Ratan vd., 2019</a>; <a href="#k-fowler">Fowler vd., 2013</a></td></tr>
+          <tr><td><a href="#g-5">5. Literatür taraması</a></td><td>Gerektirdiği beceriler; anlatı, sistematik derleme ve meta-analiz; arama stratejisinin raporlanması; güncel çalışmalar</td><td><a href="#k-pautasso">Pautasso, 2013</a>; <a href="#k-snyder">Snyder, 2019</a>; <a href="#k-prisma">Page vd., 2021</a>; <a href="#k-jawaid">Jawaid ve Jawaid, 2019</a></td></tr>
+          <tr><td><a href="#g-6">6. Makalenin yapısı</a></td><td>IMRAD; bağlam–içerik–sonuç; başlık; girişte boşluk ve amaç; yöntemin beş öğesi; bulguların sunumu; tartışma ve sonuç; kaynakça eşleşmesi</td><td><a href="#k-jawaid">Jawaid ve Jawaid, 2019</a>; <a href="#k-mensh">Mensh ve Kording, 2017</a>; <a href="#k-meo">Meo ve Eldawlatly, 2019</a>; <a href="#k-tullu">Tullu, 2019</a>; <a href="#k-eldawlatly">Eldawlatly ve Meo, 2019</a>; <a href="#k-riad">Riad, 2019</a>; <a href="#k-openstax-wg">Robinson vd., 2021</a></td></tr>
+          <tr><td><a href="#g-7">7. Yazım ve noktalama</a></td><td>Zaman tutarlılığı; büyük harf; kısaltmalar; noktalama; “ki”, “da/de”, “mi”; birleşik kelimeler</td><td><a href="#k-tdk">TDK Yazım Kuralları</a>; <a href="#k-tdk-sozluk">TDK Güncel Türkçe Sözlük</a>; <a href="#k-openstax-wg">Robinson vd., 2021</a>; <a href="#k-eldawlatly">Eldawlatly ve Meo, 2019</a></td></tr>
+          <tr><td><a href="#g-8">8. Özet ve anahtar kelimeler</a></td><td>Özetin önemi, uzunluğu, unsurları ve türleri; özette olmaması gerekenler; anahtar kelimeler ve dizinleme</td><td><a href="#k-andrade">Andrade, 2011</a>; <a href="#k-tullu">Tullu, 2019</a>; <a href="#k-mcmurrey">McMurrey, t.y.</a>; <a href="#k-meo">Meo ve Eldawlatly, 2019</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <h2><span class="num">📚</span> Kaynakça</h2>
+      <p>APA 7 biçiminde, yazar soyadına göre sıralanmıştır. Bağlantılar yayıncının ya da arşivin açık erişimli sayfasına gider.</p>
+
+      <h3>Açık lisanslı akademik kaynaklar</h3>
+      <ol class="src-list">
+        <li id="k-andrade"><p>Andrade, C. (2011). How to write a good abstract for a scientific paper or conference presentation. <i>Indian Journal of Psychiatry, 53</i>(2), 172–175. <a href="https://doi.org/10.4103/0019-5545.82558" target="_blank" rel="noopener">https://doi.org/10.4103/0019-5545.82558</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Özetin önemi, uzunluğu ve kısımları; özette atıf ve metinde olmayan bilgi</span></div></li>
+        <li id="k-aydin"><p>Aydın, E. (2022). Akademik yazılarda ilk şahıs zamirlerinin kullanımı. <i>Sosyal Mucit Academic Review, 3</i>(2), 6–7. <a href="https://doi.org/10.54733/smar.1226674" target="_blank" rel="noopener">https://doi.org/10.54733/smar.1226674</a></p><div class="src-meta"><span class="lic cc">CC BY-NC 4.0</span><span>Türkçe akademik yazıda “ben/biz” kullanımı ve nesnellik</span></div></li>
+        <li id="k-eldawlatly"><p>Eldawlatly, A. A., & Meo, S. A. (2019). Writing the methods section. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S20–S22. <a href="https://doi.org/10.4103/sja.sja_805_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_805_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Yöntemin beş öğesi; geçmiş zaman; istatistiksel yöntemlerin ayrıntısı</span></div></li>
+        <li id="k-fowler"><p>Fowler, S., Roush, R., & Wise, J. (2013). The process of science. In <i>Concepts of biology</i> (Bölüm 1.2). OpenStax. <a href="https://openstax.org/books/concepts-biology/pages/1-2-the-process-of-science" target="_blank" rel="noopener">https://openstax.org/books/concepts-biology/pages/1-2-the-process-of-science</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Açık ders kitabı: bilimsel yöntem, sınanabilir ve yanlışlanabilir hipotez, tekrarlanabilirlik, hakem değerlendirmesi</span></div></li>
+        <li id="k-fyfe"><p>Fyfe, A., Coate, K., Curry, S., Lawson, S., Moxham, N., & Røstvik, C. M. (2017). <i>Untangling academic publishing: A history of the relationship between commercial interests, academic prestige and the circulation of research</i>. Zenodo. <a href="https://doi.org/10.5281/zenodo.546100" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.546100</a></p><div class="src-meta"><span class="lic cc">CC BY 4.0</span><span>Philosophical Transactions (1665) ve akademik yayıncılığın tarihi</span></div></li>
+        <li id="k-grech"><p>Grech, V. (2019). Presenting scientific work—news media theory in presentations, abstracts, and posters. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S59–S62. <a href="https://doi.org/10.4103/sja.sja_556_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_556_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Bildiri özeti, poster ve sunumların yazımı</span></div></li>
+        <li id="k-guclu"><p>Güçlü, R. (2025). Self-mention in L1 and L2 Turkish research articles: Realizations, functions and distributions. <i>Education and Science, 50</i>(224), 169–198. <a href="https://doi.org/10.15390/ES.2025.2497" target="_blank" rel="noopener">https://doi.org/10.15390/ES.2025.2497</a></p><div class="src-meta"><span class="lic cc">CC BY</span><span>Türkçe araştırma makalelerinde yazar göndermeleri: edilgen yapı, birinci çoğul kişi eki</span></div></li>
+        <li id="k-jawaid"><p>Jawaid, S. A., & Jawaid, M. (2019). How to write introduction and discussion. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S18–S19. <a href="https://doi.org/10.4103/sja.sja_584_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_584_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>IMRAD; giriş ve tartışmanın içeriği; güncel literatür</span></div></li>
+        <li id="k-mallia"><p>Mallia, P. (2019). WASP (write a scientific paper): The ethical stages of publishing a research paper. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S44–S47. <a href="https://doi.org/10.4103/sja.sja_675_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_675_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Araştırma dürüstlüğü ve yayının etik aşamaları</span></div></li>
+        <li id="k-mcmurrey"><p>McMurrey, D. (t.y.). Abstracts. In <i>Online technical writing</i> (Bölüm 2.12.2). LibreTexts. <a href="https://human.libretexts.org/Bookshelves/Composition/Technical_Composition/Online_Technical_Writing_(McMurrey)/02%3A_Applications_of_Technical_Writing/2.12%3A_Titles_abstracts_introductions_and_conclusions/2.12.02%3A_Abstracts" target="_blank" rel="noopener">https://human.libretexts.org/…/2.12.02:_Abstracts</a></p><div class="src-meta"><span class="lic cc">CC BY 4.0</span><span>Açık ders kitabı: bilgilendirici ve betimleyici özet</span></div></li>
+        <li id="k-mensh"><p>Mensh, B., & Kording, K. (2017). Ten simple rules for structuring papers. <i>PLOS Computational Biology, 13</i>(9), e1005619. <a href="https://doi.org/10.1371/journal.pcbi.1005619" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pcbi.1005619</a></p><div class="src-meta"><span class="lic cc">CC BY 4.0</span><span>Tek ana mesaj; bağlam–içerik–sonuç; boşluk; tartışma ve sınırlılıklar; terim tutarlılığı</span></div></li>
+        <li id="k-meo"><p>Meo, S. A., & Eldawlatly, A. A. (2019). Pathophysiology of a scientific paper. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S9–S11. <a href="https://doi.org/10.4103/sja.sja_48_19" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_48_19</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Makalenin bölümleri ve her bölümde sık görülen kusurlar</span></div></li>
+        <li id="k-prisma"><p>Page, M. J., McKenzie, J. E., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., Shamseer, L., Tetzlaff, J. M., Akl, E. A., Brennan, S. E., Chou, R., Glanville, J., Grimshaw, J. M., Hróbjartsson, A., Lalu, M. M., Li, T., Loder, E. W., Mayo-Wilson, E., McDonald, S., … Moher, D. (2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. <i>BMJ, 372</i>, n71. <a href="https://doi.org/10.1136/bmj.n71" target="_blank" rel="noopener">https://doi.org/10.1136/bmj.n71</a></p><div class="src-meta"><span class="lic cc">CC BY</span><span>Sistematik derlemelerin raporlanması; bilgi kaynakları ve arama stratejisi</span></div></li>
+        <li id="k-pautasso"><p>Pautasso, M. (2013). Ten simple rules for writing a literature review. <i>PLOS Computational Biology, 9</i>(7), e1003149. <a href="https://doi.org/10.1371/journal.pcbi.1003149" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pcbi.1003149</a></p><div class="src-meta"><span class="lic cc">CC BY</span><span>Literatür taramasının gerektirdiği beceriler; betimleyici/bütünleştirici, anlatı/sistematik derleme</span></div></li>
+        <li id="k-ratan"><p>Ratan, S. K., Anand, T., & Ratan, J. (2019). Formulation of research question – Stepwise approach. <i>Journal of Indian Association of Pediatric Surgeons, 24</i>(1), 15–20. <a href="https://doi.org/10.4103/jiaps.jiaps_76_18" target="_blank" rel="noopener">https://doi.org/10.4103/jiaps.jiaps_76_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Araştırma sorusu oluşturma süreci; FINERMAPS ölçütleri</span></div></li>
+        <li id="k-riad"><p>Riad, W. (2019). Faultless impressive results: How can I do it? <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S23–S26. <a href="https://doi.org/10.4103/sja.sja_690_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_690_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Bulgular bölümünün düzeni; tablo ve şekiller; bulgularda yorum hatası</span></div></li>
+        <li id="k-openstax-wg"><p>Robinson, M. B., Jerskey, M., & Fulwiler, T. (2021). <i>Writing guide with handbook</i>. OpenStax. <a href="https://openstax.org/books/writing-guide/pages/handbook" target="_blank" rel="noopener">https://openstax.org/books/writing-guide/pages/handbook</a></p><div class="src-meta"><span class="lic cc">CC BY 4.0</span><span>Açık ders kitabı: akademik yazıda üçüncü kişi, zaman tutarlılığı, APA kaynakça kuralları</span></div></li>
+        <li id="k-snyder"><p>Snyder, H. (2019). Literature review as a research methodology: An overview and guidelines. <i>Journal of Business Research, 104</i>, 333–339. <a href="https://doi.org/10.1016/j.jbusres.2019.07.039" target="_blank" rel="noopener">https://doi.org/10.1016/j.jbusres.2019.07.039</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-ND 4.0</span><span>Bir araştırma yöntemi olarak literatür taraması ve türleri</span></div></li>
+        <li id="k-spielman"><p>Spielman, R. M., Dumper, K., Jenkins, W., Lacombe, A., Lovett, M., & Perlmutter, M. (2014). Approaches to research. In <i>Psychology</i> (Bölüm 2.2). OpenStax. <a href="https://openstax.org/books/psychology/pages/2-2-approaches-to-research" target="_blank" rel="noopener">https://openstax.org/books/psychology/pages/2-2-approaches-to-research</a></p><div class="src-meta"><span class="lic cc">CC BY</span><span>Açık ders kitabı: gözlemci yanlılığı ve nesnellik; ilişkisel verilerle nedensellik çıkarımı yapılamayacağı</span></div></li>
+        <li id="k-tullu"><p>Tullu, M. S. (2019). Writing the title and abstract for a research paper: Being concise, precise, and meticulous is the key. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S12–S17. <a href="https://doi.org/10.4103/sja.sja_685_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_685_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Başlık ve özetin nitelikleri; kelime sınırı; anahtar kelimeler ve dizinleme</span></div></li>
+        <li id="k-tumin"><p>Tumin, D., & Tobias, J. D. (2019). The peer review process. <i>Saudi Journal of Anaesthesia, 13</i>(Suppl 1), S52–S58. <a href="https://doi.org/10.4103/sja.sja_544_18" target="_blank" rel="noopener">https://doi.org/10.4103/sja.sja_544_18</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA</span><span>Hakem değerlendirmesinin tarihi ve işleyişi</span></div></li>
+        <li id="k-wfs"><p><i>Writing for success</i>. (t.y.). 11.4: Slang, cliché, and overly general words. LibreTexts. <a href="https://human.libretexts.org/Bookshelves/Composition/Introductory_Composition/Book:_Writing_for_Success_(Weaver_et_al.)/11:_Diction_and_Spelling/11.4:_Slang_Cliche_and_Overly_General_Words" target="_blank" rel="noopener">https://human.libretexts.org/…/11.4:_Slang_Cliche_and_Overly_General_Words</a></p><div class="src-meta"><span class="lic cc">CC BY-NC-SA 4.0</span><span>Açık ders kitabı: gündelik dil ve fazla genel sözcüklerden kaçınma</span></div></li>
+      </ol>
+
+      <h3>Resmî başvuru kaynakları</h3>
+      <ol class="src-list" start="22">
+        <li id="k-tdk"><p>Türk Dil Kurumu. (t.y.). <i>Yazım kuralları</i>. <a href="https://tdk.gov.tr/kategori/icerik/yazim-kurallari/" target="_blank" rel="noopener">https://tdk.gov.tr/kategori/icerik/yazim-kurallari/</a></p>
+          <div class="src-meta"><span class="lic off">Resmî kaynak</span><span>Uygulamadaki yazım denetiminin dayanağı</span></div>
+          <div class="sublinks">
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/baglac-olan-kinin-yazilisi/" target="_blank" rel="noopener">Bağlaç olan “ki”nin yazılışı</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/baglac-olan-da-denin-yazilisi/" target="_blank" rel="noopener">Bağlaç olan “da, de”nin yazılışı</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/soru-eki-mi-mi-mu-munun-yazilisi/" target="_blank" rel="noopener">Soru eki “mı, mi, mu, mü”nün yazılışı</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/buyuk-harflerin-kullanildigi-yerler/" target="_blank" rel="noopener">Büyük harflerin kullanıldığı yerler</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/kisaltmalar/" target="_blank" rel="noopener">Kısaltmalar</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/noktalama-isaretleri-aciklamalar/" target="_blank" rel="noopener">Noktalama işaretleri</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/ayri-yazilan-birlesik-kelimeler/" target="_blank" rel="noopener">Ayrı yazılan birleşik kelimeler</a>
+            <a href="https://tdk.gov.tr/icerik/yazim-kurallari/bitisik-yazilan-birlesik-kelimeler/" target="_blank" rel="noopener">Bitişik yazılan birleşik kelimeler</a>
+          </div>
+        </li>
+        <li id="k-tdk-sozluk"><p>Türk Dil Kurumu. (t.y.). <i>Güncel Türkçe sözlük</i>. <a href="https://sozluk.gov.tr/" target="_blank" rel="noopener">https://sozluk.gov.tr/</a></p><div class="src-meta"><span class="lic off">Resmî kaynak</span><span>Sözcüklerin yazımı ve yabancı sözcüklerin Türkçe karşılıkları</span></div></li>
+        <li id="k-yok"><p>Yükseköğretim Kurulu. (2025). <i>Yükseköğretim kurumları bilimsel araştırma ve yayın etiği yönergesi</i>. <a href="https://www.yok.gov.tr/documents/documents/68fb63b8b2511.pdf" target="_blank" rel="noopener">https://www.yok.gov.tr/documents/documents/68fb63b8b2511.pdf</a></p><div class="src-meta"><span class="lic off">Resmî kaynak</span><span>Bilimsel araştırma ve yayın etiğine aykırı eylemler (intihal, uydurma, çarpıtma…)</span></div></li>
+        <li id="k-tez"><p>Yükseköğretim Kurulu. (t.y.). <i>Ulusal tez merkezi</i>. <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/" target="_blank" rel="noopener">https://tez.yok.gov.tr/UlusalTezMerkezi/</a></p><div class="src-meta"><span class="lic off">Resmî kaynak</span><span>Türkiye’deki lisansüstü tezlerin arşivi</span></div></li>
+      </ol>
+    </section>
+  </article>
+</main>
+
+<!-- ======================= YAZMA ======================= -->
+<main id="view-yaz" class="view writer" hidden>
+  <div class="toolbar">
+    <div class="tb-left">
+      <button class="btn" id="btn-sample">Örnek makale yükle</button>
+      <button class="btn" id="btn-bad">Hatalı örnek yükle</button>
+      <button class="btn ghost" id="btn-clear">Temizle</button>
+      <details class="limits" id="limits">
+        <summary class="btn ghost">⚙ Dergi sınırları</summary>
+        <div class="limits-pop">
+          <p>Hedef derginizin yazım kurallarındaki sınırları girin.</p>
+          <label>Özet en az <input type="number" min="0" id="lim-absMin"> kelime</label>
+          <label>Özet en çok <input type="number" min="0" id="lim-absMax"> kelime</label>
+          <label>Anahtar kelime en az <input type="number" min="0" id="lim-kwMin"></label>
+          <label>Anahtar kelime en çok <input type="number" min="0" id="lim-kwMax"></label>
+          <button class="btn ghost" id="lim-reset" type="button">Varsayılana dön</button>
+        </div>
+      </details>
+    </div>
+    <div class="tb-right">
+      <span class="saved" id="saved">Otomatik kaydedilir</span>
+      <button class="btn" id="btn-export">Dışa aktar (.txt)</button>
+      <button class="btn primary" id="btn-pdf">PDF indir</button>
+    </div>
+  </div>
+
+  <div class="writer-grid">
+    <div class="editor" id="editor"></div>
+
+    <div class="side" id="side" data-tab="a4">
+    <div class="side-tabs" role="tablist">
+      <button class="st on" data-side="a4">📄 A4 önizleme</button>
+      <button class="st" data-side="check">Denetim <span class="st-count" id="st-count"></span></button>
+    </div>
+
+    <section class="preview" id="preview" aria-label="A4 sayfa önizlemesi">
+      <div class="pv-bar">
+        <span><b>A4 önizleme</b> · <span id="pv-pages">1 sayfa</span></span>
+        <span class="pv-note">Times New Roman 12 pt · 1,5 satır · 2,5 cm kenar</span>
+        <button class="btn pv-pdf" id="pv-pdf" type="button">⬇ PDF</button>
+      </div>
+      <div class="pv-scroll" id="pv-scroll"><div class="pages" id="pages" lang="tr"></div></div>
+    </section>
+
+    <aside class="panel" id="panel">
+      <div class="score-box">
+        <svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="50" class="ring-bg"/><circle cx="60" cy="60" r="50" class="ring-fg" id="ring-fg"/></svg>
+        <div class="score-num"><b id="score">0</b><span>/100</span></div>
+        <div class="score-meta">
+          <div class="score-label" id="score-label">Yazmaya başlayın</div>
+          <div class="counts">
+            <span class="c-err"><b id="n-err">0</b> hata</span>
+            <span class="c-warn"><b id="n-warn">0</b> uyarı</span>
+            <span class="c-info"><b id="n-info">0</b> öneri</span>
+          </div>
+          <div class="wc" id="wc">0 kelime</div>
+        </div>
+      </div>
+
+      <div class="next" id="next"></div>
+
+      <div class="focus-box" id="focus-box"></div>
+
+      <div class="filters" role="tablist">
+        <button class="f on" data-f="all">Tümü</button>
+        <button class="f" data-f="error">Hatalar</button>
+        <button class="f" data-f="warn">Uyarılar</button>
+        <button class="f" data-f="info">Öneriler</button>
+        <label class="only"><input type="checkbox" id="only-focus"> Odaktaki bölüm</label>
+      </div>
+      <div class="issues" id="issues"></div>
+    </aside>
+    </div>
+  </div>
+</main>
+
+<main id="view-fisler" class="view fis" hidden>
+  <div class="toolbar fis-toolbar">
+    <div class="tb-left">
+      <button class="btn primary" id="fis-new-kaynak" type="button">+ Kaynak fişi</button>
+      <button class="btn primary" id="fis-new-bilgi" type="button">+ Not fişi</button>
+      <button class="btn" id="fis-sample" type="button">Örnek fişler yükle</button>
+      <button class="btn ghost" id="fis-clear" type="button">Tümünü sil</button>
+    </div>
+    <div class="tb-right">
+      <span class="saved" id="fis-status">Otomatik kaydedilir</span>
+      <button class="btn" id="fis-to-kaynakca" type="button">Kaynakçaya aktar</button>
+      <button class="btn" id="fis-print" type="button">⬇ Tüm fişleri PDF indir</button>
+    </div>
+  </div>
+
+  <details class="fis-rules" id="fis-rules">
+    <summary>📋 Fişleme kuralları</summary>
+    <div class="fis-rules-body">
+      <div>
+        <b>1. Kaynak (bibliyografya) fişi — her kitap için bir tane</b>
+        <ul>
+          <li>Okunan her kaynak için <b>bir</b> kaynak fişi açılır.</li>
+          <li>Fişin üstüne yazarın soyadı ve adı, altına sırasıyla eserin adı, yayın bilgileri ve yılı yazılır.</li>
+          <li>Künye eksiksiz yazılır: yazar, yıl, başlık, yayın yeri (dergi, cilt, sayı, sayfa ya da yayınevi), varsa DOI.</li>
+          <li>Kaynakça bu fişlerden oluşturulur; künyesi olmayan bilgi metne giremez.</li>
+        </ul>
+      </div>
+      <div>
+        <b>2. Not fişi — her bilgi/alıntı için ayrı bir tane</b>
+        <ul>
+          <li>Her fişe <b>tek bir bilgi ya da düşünce</b> yazılır; uzun notlar bölünür.</li>
+          <li>Fişin sol üstüne konu başlığı, sağ üstüne fiş numarası, en altına kaynak ve sayfa numarası yazılır.</li>
+          <li>Kâğıdın yalnızca bir yüzü kullanılır.</li>
+          <li>Fişler konu başlığına ve makalede kullanılacakları bölüme göre sınıflanır.</li>
+        </ul>
+      </div>
+      <div>
+        <b>Fiş türleri</b>
+        <ul>
+          <li><b>Doğrudan alıntı → tırnak içinde:</b> kaynaktaki ifade hiç değiştirilmeden, tırnak içinde aktarılır; sayfa numarası zorunludur. 40 kelimeden uzun alıntılar ayrı paragraf olarak verilir, bu yüzden kısa tutulmalıdır.</li>
+          <li><b>Özet → kendi cümlelerinle:</b> okunan bilgi kendi cümlelerinizle kısaca yazılır; kaynak ve sayfa yine gösterilir.</li>
+          <li><b>Yorum → [Yorumum] ile işaretle:</b> kendi düşünceniz, kaynaktaki bilgiyle karışmasın diye [Yorumum] etiketiyle yazılır.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <div class="fis-grid">
+    <section class="fis-col">
+      <div class="fis-col-head"><h2>Kaynak fişleri</h2><span class="fis-count" id="fis-k-count"></span></div>
+      <div class="fis-list" id="fis-kaynaklar"></div>
+    </section>
+    <section class="fis-col">
+      <div class="fis-col-head">
+        <h2>Not fişleri</h2><span class="fis-count" id="fis-b-count"></span>
+        <div class="fis-filters">
+          <input type="search" id="fis-q" placeholder="Fişlerde ara…" aria-label="Fişlerde ara">
+          <select id="fis-f-tur" aria-label="Fiş türü"></select>
+          <select id="fis-f-bolum" aria-label="Makale bölümü"></select>
+          <select id="fis-f-kaynak" aria-label="Kaynak"></select>
+        </div>
+      </div>
+      <div class="fis-list fis-cards" id="fis-bilgiler"></div>
+    </section>
+  </div>
+
+<!-- Fiş oluşturma: listelerin yerine açılır; solda form, sağda A5 kâğıt önizlemesi -->
+<section class="fis-editor" id="fis-ed-kaynak" hidden>
+  <form class="fis-form" id="fis-form-kaynak" autocomplete="off">
+    <h3>Kaynak fişi</h3>
+    <label>Kaynak türü
+      <select name="tur">
+        <option value="makale">Dergi makalesi</option>
+        <option value="kitap">Kitap</option>
+        <option value="bolum">Kitapta bölüm</option>
+        <option value="tez">Tez</option>
+        <option value="web">Web sayfası / rapor</option>
+      </select>
+    </label>
+    <label>Konu / alan <small>Fişin sol üstünde görünür; fişleri gruplamaya yarar</small>
+      <input name="konu" placeholder="Örn. Osmanlı – Klasik Dönem (kaynak no otomatik verilir)">
+    </label>
+    <label>Yazar(lar) <small>Her satıra bir yazar: Soyad, Ad (kurum yazarsa adını yazın)</small>
+      <textarea name="yazarlar" rows="3" placeholder="Örn. İnalcık, Halil"></textarea>
+    </label>
+    <div class="fis-row">
+      <label class="w-s">Yıl <input name="yil" inputmode="numeric" placeholder="Örn. 2003"></label>
+      <label>Başlık <input name="baslik" placeholder="Örn. Osmanlı İmparatorluğu Klasik Çağ (1300–1600)"></label>
+    </div>
+    <label>Kısa adı <small>Not fişlerinin altında kaynağı kısaca göstermek için; boş bırakılırsa başlıktan alınır</small>
+      <input name="kisa" placeholder="Örn. Klasik Çağ">
+    </label>
+    <label data-for="makale">Dergi adı <input name="dergi" placeholder="Örn. Belleten"></label>
+    <div class="fis-row" data-for="makale">
+      <label>Cilt <input name="cilt" placeholder="Örn. 65"></label>
+      <label>Sayı <input name="sayi" placeholder="Örn. 2"></label>
+      <label>Sayfalar <input name="sayfalar" placeholder="Örn. 50-58"></label>
+    </div>
+    <label data-for="bolum">Editör(ler) <small>Her satıra bir editör: Ad Soyad</small>
+      <textarea name="editorler" rows="2" placeholder="Örn. Ayşe Yılmaz"></textarea>
+    </label>
+    <div class="fis-row" data-for="bolum">
+      <label>Kitabın adı <input name="kitap"></label>
+      <label class="w-s">Sayfalar <input name="bsayfalar" placeholder="Örn. 45-67"></label>
+    </div>
+    <label data-for="kitap bolum">Çevirmen <small>Çeviri eserse: Ad Soyad</small><input name="cevirmen" placeholder="Örn. Ruşen Sezer"></label>
+    <div class="fis-row" data-for="kitap bolum">
+      <label>Yayınevi <input name="yayinevi" placeholder="Örn. Yapı Kredi Yayınları"></label>
+      <label class="w-m">Yayın yeri <input name="yer_basim" placeholder="Örn. İstanbul"></label>
+    </div>
+    <div class="fis-row" data-for="tez">
+      <label>Tez türü <select name="teztur"><option>Yüksek lisans tezi</option><option>Doktora tezi</option></select></label>
+      <label>Üniversite <input name="universite"></label>
+    </div>
+    <label data-for="web">Site / kurum adı <input name="site"></label>
+    <label>DOI ya da URL <input name="doi" placeholder="Örn. 10.37879/belleten.2001.123 (basılı kitapta boş bırakın)"></label>
+    <label>Bulunduğu yer <small>Kütüphane ve yer numarası ya da erişim bilgisi</small>
+      <input name="bulundugu" placeholder="Örn. Fakülte kütüphanesi, DR486 .I53">
+    </label>
+    <label>Not <small>İsteğe bağlı: eser hakkında genel değerlendirme</small>
+      <textarea name="not" rows="2"></textarea>
+    </label>
+    <div class="fis-preview"><span>Kaynakçada görünüşü</span><p id="fis-kunye-pv"></p></div>
+    <div class="fis-form-actions">
+      <button class="btn ghost" type="button" data-act="cancel">Vazgeç</button>
+      <button class="btn primary" type="submit">Kaydet</button>
+    </div>
+  </form>
+  <aside class="fis-pv" aria-label="Fiş kâğıdı önizlemesi">
+    <div class="pv-bar"><span class="pv-size" role="group" aria-label="Kâğıt boyutu"><button type="button" data-size="a5">A5</button><button type="button" data-size="a6">A6</button><span class="pv-dim"></span></span><span class="pv-note" id="fis-a5-note-kaynak"></span><button type="button" class="btn pv-pdf" data-act="pdf">⬇ PDF</button></div>
+    <div class="pv-scroll"><div class="a5" id="fis-a5-kaynak"></div></div>
+  </aside>
+</section>
+
+<section class="fis-editor" id="fis-ed-bilgi" hidden>
+  <form class="fis-form" id="fis-form-bilgi" autocomplete="off">
+    <h3>Not fişi</h3>
+    <div class="fis-types" role="radiogroup" aria-label="Fiş türü" id="fis-types"></div>
+    <p class="fis-type-hint" id="fis-type-hint"></p>
+    <div class="fis-row">
+      <label>Kaynak <small id="fis-kaynak-hint"></small><select name="kaynak"></select></label>
+      <label class="w-s">Sayfa <input name="sayfa" placeholder="Örn. 12 ya da 12-14"></label>
+    </div>
+    <div class="fis-row">
+      <label>Konu başlığı <input name="konu" placeholder="Örn. Tımar sistemi"></label>
+      <label>Alt başlık <input name="altbaslik" placeholder="Örn. Sipahinin görevleri"></label>
+    </div>
+    <label>Kullanılacağı bölüm <select name="bolum"></select></label>
+    <label>İçerik <textarea name="icerik" rows="7"></textarea></label>
+    <div class="fis-meta-line"><span id="fis-wc"></span></div>
+    <div class="fis-preview"><span>Makalede görünüşü</span><p id="fis-metin-pv"></p></div>
+    <div class="fis-form-actions">
+      <button class="btn ghost" type="button" data-act="cancel">Vazgeç</button>
+      <button class="btn primary" type="submit">Kaydet</button>
+    </div>
+  </form>
+  <aside class="fis-pv" aria-label="Fiş kâğıdı önizlemesi">
+    <div class="pv-bar"><span class="pv-size" role="group" aria-label="Kâğıt boyutu"><button type="button" data-size="a5">A5</button><button type="button" data-size="a6">A6</button><span class="pv-dim"></span></span><span class="pv-note" id="fis-a5-note-bilgi"></span><button type="button" class="btn pv-pdf" data-act="pdf">⬇ PDF</button></div>
+    <div class="pv-scroll"><div class="a5" id="fis-a5-bilgi"></div></div>
+  </aside>
+</section>
+</main>
+
+<script src="rules.js"></script>
+<script src="examples.js"></script>
+<script src="app.js"></script>
+<script src="fisler.js"></script>
+</body>
+</html>

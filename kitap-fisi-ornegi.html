@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitap fişi örneği</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#faf9f5;color:#1f1e1d;max-width:680px;margin:2rem auto;padding:0 16px;}
+.lbl{font-size:13px;color:#6b6a65;margin:16px 0 8px;}
+.card{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:1rem 1.25rem;}
+.head,.foot{display:flex;justify-content:space-between;font-size:13px;color:#6b6a65;}
+.head{border-bottom:1px solid #e5e3da;padding-bottom:6px;margin-bottom:10px;}
+.foot{border-top:1px solid #e5e3da;margin-top:10px;padding-top:6px;}
+.serif{font-family:Georgia,serif;font-size:15px;line-height:1.7;margin:0;}
+.tags span{display:inline-block;font-size:12px;padding:4px 10px;border-radius:8px;margin:12px 6px 0 0;}
+</style>
+</head>
+<body>
+<div class="lbl">1. Kaynak (bibliyografya) fişi — her kitap için bir tane</div>
+<div class="card">
+<div class="head"><span>Osmanlı – Klasik Dönem</span><span>Kaynak No: K-12</span></div>
+<p class="serif"><b>İNALCIK, Halil</b><br><i>Osmanlı İmparatorluğu Klasik Çağ (1300–1600)</i><br>çev. Ruşen Sezer<br>Yapı Kredi Yayınları, İstanbul 2003</p>
+<div class="foot"><span>Bulunduğu yer: Fakülte kütüphanesi, DR486 .I53</span></div>
+</div>
+<div class="lbl">2. Not fişi — her bilgi/alıntı için ayrı bir tane</div>
+<div class="card">
+<div class="head" style="color:#1f1e1d"><b>Konu: Tımar sistemi</b><span style="color:#6b6a65">Fiş No: 12/3</span></div>
+<div style="font-size:13px;color:#6b6a65;margin-bottom:8px;">Alt başlık: Sipahinin görevleri</div>
+<p class="serif">[Özet] Tımar sahibi sipahi, dirliğinden gelen gelir karşılığında savaşa belirli sayıda askerle katılmak ve bölgesinde düzeni sağlamakla yükümlüydü.</p>
+<div class="foot"><span>İnalcık, Klasik Çağ</span><span>s. 112</span></div>
+</div>
+<div class="tags">
+<span style="background:#e6f1fb;color:#0c447c">Doğrudan alıntı → tırnak içinde</span>
+<span style="background:#eaf3de;color:#27500a">Özet → kendi cümlelerinle</span>
+<span style="background:#faeeda;color:#633806">Yorum → [Yorumum] ile işaretle</span>
+</div>
+</body>
+</html>
