@@ -1,0 +1,10 @@
+# Derleme yok: site, deponun kök klasöründeki dosyalardan olduğu gibi yayınlanır
+[build]
+  publish = "."
+  command = ""
+
+# Service worker her açılışta güncel sürümü alsın (önbellekte eski kopya kalmasın)
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
